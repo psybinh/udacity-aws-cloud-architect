@@ -1,0 +1,33 @@
+﻿Estimate summary
+Upfront cost,Monthly cost,Total 12 months cost,Currency
+0,6435.9800000000005,77231.76,USD
+,,* Includes upfront cost
+
+
+Detailed Estimate
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
+My Estimate,US East (N. Virginia),Web Server,Amazon EC2 ,0,582.33,6987.96,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 6), Advance EC2 instance (t3a.xlarge), Pricing strategy (Compute Savings Plans 1yr  No Upfront), Enable monitoring (enabled), EBS Storage amount (100 GB), DT Inbound: Internet (100 TB per month), DT Outbound: Internet (0 TB per month), DT Intra-Region: (0 TB per month)"
+My Estimate,US East (N. Virginia),Application Server,Amazon EC2 ,0,658.98,7907.76,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 6), Advance EC2 instance (m5a.xlarge), Pricing strategy (Compute Savings Plans 1yr  No Upfront), Enable monitoring (enabled), EBS Storage amount (100 GB), DT Inbound: Internet (100 TB per month), DT Outbound: Internet (0 TB per month), DT Intra-Region: (0 TB per month)"
+My Estimate,US East (N. Virginia),Master,Amazon RDS for PostgreSQL,0,984.971,11819.65,USD,,"Storage amount (1 TB), Storage volume (General Purpose SSD (gp2)), Nodes (1), Instance Type (db.m6g.4xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Single-AZ), Pricing Model (Reserved), Lease Offering Term (1yr), Purchase Option (No Upfront), Additional backup storage (1 TB)"
+My Estimate,US East (N. Virginia),Read replica,Amazon RDS for PostgreSQL,0,984.971,11819.65,USD,,"Storage amount (1 TB), Storage volume (General Purpose SSD (gp2)), Nodes (1), Instance Type (db.m6g.4xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Single-AZ), Pricing Model (Reserved), Lease Offering Term (1yr), Purchase Option (No Upfront), Additional backup storage (1 TB)"
+My Estimate,US East (N. Virginia),,Amazon Route 53,0,365.5,4386.00,USD,,"Hosted Zones (1), Basic Checks Within AWS (4), Number of Elastic Network Interfaces (4)"
+My Estimate,US East (N. Virginia),,S3 Standard,0,280.52,3366.24,USD,,"S3 Standard storage (10 TB per month), PUT, COPY, POST, LIST requests to S3 Standard (5000000), GET, SELECT, and all other requests from S3 Standard (50000000)"
+My Estimate,US East (N. Virginia),,Data Transfer,0,0,0.00,USD,,
+My Estimate,US East (N. Virginia),,Amazon CloudFront,0,455.2,5462.40,USD,,"Data transfer out to internet (5 TB per month), Number of requests (HTTPS) (20000000 per month)"
+My Estimate,US East (N. Virginia),,VPN Connection,0,667,8004.00,USD,,"Working days per month (30), Number of subnet associations (4)"
+My Estimate,US East (N. Virginia),,Amazon CloudWatch,0,211.4,2536.80,USD,,"Number of Metrics (includes detailed and custom metrics) (200), Expected Logs Data scanned (100 GB), Logs Delivered to S3: Data Ingested (200 GB), Logs Delivered to CloudWatch Logs: Data Ingested (200 GB)"
+My Estimate,US East (N. Virginia),,Application Load Balancer,0,308.43,3701.16,USD,,Number of Application Load Balancers (1)
+My Estimate,US East (N. Virginia),,Network Load Balancer,0,673.43,8081.16,USD,,"Number of Network Load Balancers (1), Processed bytes per NLB for TCP (50 GB per hour), Average number of new TCP connections (300 per second), Average TCP connection duration (300 seconds), Processed bytes per NLB for TLS (50 GB per hour), Processed bytes per NLB for UDP (50 GB per hour)"
+My Estimate,US East (N. Virginia),,Network Address Translation (NAT) Gateway,0,263.25,3159.00,USD,,Number of NAT Gateways (1)
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+
+
+Change:
+- Change "Pricing strategy" from "On-Demand" to 1 year plan in EC2 Application servers, EC2 Web server, RDS master and RDS read replica.
+- Reduce amout of data and number of requests per month in Amazon CloudFront
+- Reduce processed data and number of connection in Network Load Balancer
