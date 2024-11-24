@@ -1,0 +1,20 @@
+Minimum RTO for a Single AZ Outage
+    Automatically and it take about < 10 minutes. 
+
+Minimum RTO for a Single Region Outage
+    00:00 - Error occurs in us-east-1.
+    00:05 - 24/7 team received alert
+    00:10 - Maintaining team received call from 24/7 team 
+    00:10 - Turn on secondary instance and route traffic to secondary VPC
+    01:00 – Investigate root cause
+    00:30 - Monitoring application after recovery (Start at the same time as investigate root cause)
+    00:15 – Report result
+
+    Total: 1h40m
+
+Minimum RPO for a Single AZ Outage
+    Automatically and it take about < 10 minutes. 
+
+Minimum RPO for a Single Region Outage
+    Accept data loss: 15m
+    Not accept data loss: The time between 2 times data is backed-up.
