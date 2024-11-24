@@ -1,3 +1,14 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
-
-Bonus - provide recommendations on how to remediate the vulnerabilities.
+- Amazon Inspector 
+    + ECR scanning should be enabled
+    + Lambda code scanning should be enabled
+    + Lambda standard scanning should be enabled
+- CloudTrail should be enabled and configured with at least one multi-Region trail that includes read and write management events
+- EC2 instances 
+    + Should not have a public IPv4 address
+    + Should use Instance Metadata Service Version 2 (IMDSv2)
+- Security groups
+    + Should not allow ingress from 0.0.0.0/0 or ::/0 to port 22 and 3389
+    + Should not allow unrestricted access to ports with high risk
+    + Should only allow unrestricted incoming traffic for authorized ports
+- VPC default security groups should not allow inbound or outbound traffic
