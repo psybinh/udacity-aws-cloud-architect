@@ -1,0 +1,62 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+    TerraScan
+    Tfsec
+
+### Example vulnerability
+    Insecure S3 Bucket Configuration
+        resource "aws_s3_bucket" "example" {
+        bucket = "example-bucket"
+
+        acl = "public-read" # Allows public read access
+        }
+
+    Issue: acl = "public-read": This setting makes the bucket and its contents publicly accessible, which can lead to data leaks.
+
+##Scan AMI’s or containers for OS vulnerabilities
+    Docker Scan
+    Trivy
+
+### Example vulnerability
+    Dockerfile Example
+        # Use an outdated base image
+        FROM ubuntu:18.04
+
+        # Install packages without version locking
+        RUN apt-get update && apt-get install -y \
+            openssl \
+            curl
+
+        # Copy application code
+        COPY app/ /app/
+
+        CMD ["bash"]
+
+    Issues in this Dockerfile:
+        Outdated base image: ubuntu:18.04 has known vulnerabilities.
+        Unversioned package installation: Openssl and curl versions are not pinned, which can pull vulnerable versions.
+        No security practices: No multi-stage build, non-root user, or minimal image usage.
+
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+    AWS Config
+    AWS Inspector
+
+### Example vulnerability
+    Publicly Accessible S3 Bucket
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::example-bucket/*"
+                }
+            ]
+        }
+    
+    Issue: The Principal: "*" allows anyone on the internet to access the objects in the S3 bucket.
+
+

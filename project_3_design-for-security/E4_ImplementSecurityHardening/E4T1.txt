@@ -1,0 +1,8 @@
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+- Use fail2ban to block an IP after specific times that user loging in failed
+- Limit access, just allow access from VPN
+- Use CloudWatch and GuardDuty to monitoring.
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+- Implement best practice for IAM policy: Least privilege access
+- Enable SSE for the secret data in S3 bucket
